@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>MultiTwitchViewing</title>
+
+	<style>
+		body {
+			margin: 0;
+		}
+
+		.blurred {
+			filter: blur(4px);
+			-webkit-filter: blur(4px);
+		}
+
+		.b-w {
+			filter: grayscale(80%);
+			-webkit-filter: grayscale(80%);
+		}
+
+		.blurred.b-w {
+			filter: blur(3px) grayscale(80%);
+			-webkit-filter: blur(3px) grayscale(80%);
+		}
+
+		#css,
+		#webgl {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		#webgl {
+			pointer-events: none;
+		}
+
+
+		#overlay-container {
+			position: absolute;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			min-width: 400px;
+			/*min-height: 100%;*/
+			width: 100%;
+			height: 8%;
+			top: 92%;
+			text-align: center;
+			pointer-events: none;
+		}
+
+		.overlay {
+			position: relative;
+			display: inline-block;
+			pointer-events: all;
+		}
+
+		.button-op {
+			background-color: rgba(107, 56, 5, 0.4);
+			color: rgba(255, 255, 255, 0.8);
+			border: 2px solid;
+			border-radius: 4px;
+			outline: none;
+		}
+
+		.button-op:active {
+			background-color: rgba(255, 255, 255, 0.6);
+		}
+
+		#input-name {
+			background-color: rgba(107, 56, 5, 0.2);
+			color: rgba(255, 255, 255, 0.8);
+			border: 1px solid;
+			border-radius: 4px;
+			outline: none;
+		}
+
+		.right {
+			transform: rotate(-90deg);
+			-webkit-transform: rotate(-90deg);
+		}
+
+		.left {
+			transform: rotate(90deg);
+			-webkit-transform: rotate(90deg);
+		}
+
+		.arrow {
+			background: url('./ressources/arrow.png') no-repeat;
+			opacity: 0.8;
+			min-width: 30px;
+			min-height: 30px;
+			border: none;
+			background-size: cover;
+			outline: none;
+			top: 8px;
+		}
+
+		.small-arrow {
+			background: url('./ressources/arrow.png') no-repeat;
+			opacity: 0.8;
+			width: 15px;
+			height: 15px;
+			border: none;
+			background-size: cover;
+			outline: none;
+			top: 2px;
+			margin-left: 25px;
+			margin-right: 25px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id='css'></div>
+	<div id='webgl'></div>
+
+	<div id='overlay-container'>
+		<button id="arrow-left" class="arrow left overlay"></button>
+		<button id="small-arrow-left" class="small-arrow left overlay"></button>
+		<input class="overlay" type="text" id="input-name" required minlength="1" size="8">
+		<button id="button-add" class="button-op overlay" type="button">Add</button>
+		<button id="button-remove" class="button-op overlay" type="button" style="margin-left: 12px;">Remove</button>
+		<button id="small-arrow-right" class="small-arrow right overlay"></button>
+		<button id="arrow-right" class="arrow right overlay"></button>
+	</div>
+
+	<script src="https://player.twitch.tv/js/embed/v1.js"></script>
+	<script src="https://embed.twitch.tv/js/embed/v1.js"></script>
+	<script src="build/bundle.js"></script>
+</body>
+
+</html>
