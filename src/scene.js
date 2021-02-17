@@ -68,6 +68,7 @@ async function init() {
         // Background
         const geometry = new THREE.SphereBufferGeometry(1, 60, 60);
         const texture = new THREE.TextureLoader().load('./ressources/noisy-texture-200x200-o4-d15-c-050201-t0.png');
+        //const texture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/yohkaz/Twitch3D/main/ressources/noisy-texture-200x200-o4-d15-c-050201-t0.png');
         texture.wrapS = THREE.RepeatWrapping;
         texture.wrapT = THREE.RepeatWrapping;
         texture.repeat.set(30, 30);
@@ -97,7 +98,8 @@ async function init() {
         // Floor plane
 
         // Load texture
-        const texture = new THREE.TextureLoader().load('./materials/noise/noisy-texture-200x200-o4-d15-c-050201-t0.png');
+        const texture = new THREE.TextureLoader().load('./ressources/noisy-texture-200x200-o4-d15-c-050201-t0.png');
+        //const texture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/yohkaz/Twitch3D/main/ressources/noisy-texture-200x200-o4-d15-c-050201-t0.png');
         texture.wrapS = THREE.RepeatWrapping;
         texture.wrapT = THREE.RepeatWrapping;
         const baseMat = new THREE.MeshStandardMaterial({
