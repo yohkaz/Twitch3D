@@ -5,7 +5,7 @@ import { SceneUtils } from 'three/examples/jsm/utils/SceneUtils.js';
 export { Stream, GridMode, AlignedMode };
 
 // Twitch access token
-const access_token = 'bphtz7l732ojb1vvmxzg118sbu1vkk';
+const access_token = 'eixd0u5vf0qrc9jji71pcuaolvza0b';
 
 const GridMode = 0;
 const AlignedMode = 1;
